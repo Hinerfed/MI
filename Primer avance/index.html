@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/back.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>\(^w^)/</title>
+    <!--<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>-->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="  crossorigin="anonymous"></script>
+    
+    <script language="javascript" type="text/javascript">
+    $("document").ready(function() {
+          $("#toggleForm1,#toggleForm2").click(function() {
+            $("form#formLogin").toggleClass("hiddeni");
+            $("form#formSignin").toggleClass("hiddeni");
+          });
+    });
+    </script>
+
+</head>
+<body class="body">
+    <div class="container">
+        
+        <div class="overlay">
+            <div class="body">
+                <img src="imagenes\owo.png" class="center">
+                <a href="juego.html" class="button1">Juega</a>
+                <button onclick="document.getElementById('id01').style.display='block'" class="button2">Inicia Sesion</button>
+            </div>
+            
+        </div>
+    </div>
+    
+
+<!-- modales -->
+<!----------------------------------------------------------------->
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate LoginForm" id="formLogin" action="includes/login.php" method="post" style="z-index:500;">
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="button" style="width:40%; display:inline-block" id="toggleForm1">Crear cuenta</button>
+      <button type="submit" style="width:40%; display:inline-block; float:right">Login</button>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+
+<!------------------------------------------------------------------------------------------------------------------------------------>
+  <form class="modal-content animate LoginForm hiddeni" id="formSignin" action="includes/signin.php" method="post" style="z-index:500;">
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+      
+      <label for="email"><b>Correo</b></label>
+      <input type="text" placeholder="correo_ejemplo@dominio.com" name="email" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <label for="psw"><b>Confirmar password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw2" required>
+
+      <button type="button" style="width:40%; display:inline-block" id="toggleForm2">Login</button>
+      <button type="submit" style="width:40%; display:inline-block; float:right" name="submitLogin">Crear cuenta</button>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+<!------------------------------------------------------------------------------------------------------------------------------------>
+</div>
+
+</body>
+</html>
